@@ -1,0 +1,29 @@
+1. Run the example code.
+2. Write a program to do Addition, Subtraction and multiplication of two numbers without variables.
+3. Write a program to do Addition, Subtraction and multiplication of two numbers with variables.
+4. Now take the inputs from user and then do the previous operation.
+5. Write a program to convert uppercase letters to lower and vice-verca. 
+
+
+
+ MOV AL,1
+    INT 21H
+    MOV VAR, AL
+    
+    MOV AH,2
+    MOV DL, 0AH
+    INT 21H
+    MOV DL,0DH
+    INT 21H
+    
+    MOV AL, 2
+    MOV DL, VAR
+    INT 21H
+
+
+ 
+        ; SUBTRACTION
+    SUB BL, CL
+    MOV AL, 2
+    MOV BL, AL
+    INT 21H
