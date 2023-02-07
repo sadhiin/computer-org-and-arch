@@ -1,0 +1,106 @@
+org 100h
+ 
+w:  db "?$"
+
+msg1:    db  "THE SUM OF ", 24h
+msg2:    db  " AND ", 24h
+msg3:    db  " IS ", 24h
+
+.data
+
+.code
+main proc
+    mov ah,2
+    mov dl, 63d
+    int 21h
+    
+    mov ah,1
+    add al,48
+    mov dl, bl
+    int 21h
+            
+    mov ah, 1
+    add al,48
+    mov dl, cl
+    int 21h
+              
+    ; mew line
+    mov ah,2
+    mov dl, 0Ah
+    int 21h
+    mov dl, 0Dh
+    int 21h
+    
+    ; first message
+    mov ah, 2
+    mov dl, 84d
+    int 21h
+    mov dl, 72d
+    int 21h
+    mov dl, 69d
+    int 21h
+    mov dl, 32d
+    int 21h
+    mov dl, 83d
+    int 21h
+    mov dl, 85d
+    int 21h
+    mov dl, 77d
+    int 21h
+    mov dl, 32d
+    int 21h    
+    mov dl, 79d
+    int 21h
+    mov dl, 70d
+    int 21h
+    mov dl, 32d
+    int 21h
+    
+    
+    ; first input value
+    mov ah,2
+    mov dl, bl
+    int 21h
+    
+    ; second part of message
+    mov dl, 32d
+    int 21h
+    mov dl, 65d
+    int 21h   
+    mov dl, 78d
+    int 21h   
+    mov dl, 68d
+    int 21h   
+    mov dl, 32d
+    int 21h
+    
+    ; Second input value
+    mov ah,2
+    mov dl,cl
+    
+    int 21h
+ 
+    ; third part message
+    mov dl, 32d
+    int 21h
+    mov dl, 73d
+    int 21h
+    mov dl, 83d
+    int 21h 
+    mov dl, 32d
+    int 21h
+     
+    
+    ;result printing
+    
+    add bl,cl
+    ;sub bl,48
+    
+    mov ah,2
+    mov dl, bl
+    int 21h
+          
+    
+    mov ah,4ch
+    main endp
+end main

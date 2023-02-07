@@ -1,0 +1,7 @@
+1. Show your full name as output (based on the knowledge upto now)
+2.Write a program to (a) display a "?", (b) read two decimal digits 
+whose sum "is less than 10, (c) display them and their sum on the
+next line, with an appropriate message.
+Sample execution:
+?27
+THE SUM OF 2 AND 7 IS 9
