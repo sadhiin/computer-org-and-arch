@@ -22,21 +22,21 @@ main proc
     
     mov ah,1
     int 21h
-        
+    
+    ;checking what value in ax     
     mov ah,2
     mov dx, ax
     int 21h
-	        
-	sub ax,30h
+	    
+	mov bx, ax
 	
-	mov cx, 30h
-    cmp ax,cx
+	mov cx,'0'
+    cmp bx,cx  
     
-    jl negetive
     je zero
+    jl negetive
     jg positive
- 
-    
+
     negetive:
         mov bx,'-1'
         jmp exit
